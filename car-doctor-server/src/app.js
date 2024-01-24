@@ -1,7 +1,10 @@
 const express = require('express');
+const applyMiddleware = require('./middlewares/applyMiddleware');
 require('dotenv').config()
 const app = express()
 const port = process.env.PORT ||5000
+
+applyMiddleware(app)
 
 
 app.get('/health', (req, res) => {
